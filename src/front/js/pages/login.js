@@ -22,12 +22,18 @@ export const Login = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Login</h1>
+			<h1 style={{color: 'white', margin: 40}}>Login Here</h1>
                 {(store.token && store.token != "" && store.token != undefined) ? "You are logged in with this token!" + store.token :
-                <div>   
-                    <input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <button onClick={handleClick}>Login</button>
+                <div>  
+                    <div>
+                        <input style={{margin: 5, fontStyle: 'italic'}}  type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div> 
+                    <div>
+                        <input style={{margin: 5, fontStyle: 'italic' }} type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div> 
+                    <div>
+                    <button style={{margin: 10, fontWeight: 'bold', backgroundColor: 'grey', borderRadius: 5}} onClick={handleClick}>Login</button>
+                    </div> 
                 </div>
                 }
 		</div>

@@ -7,7 +7,7 @@ from api.models import db, User
 from api.utils import generate_sitemap, APIException
 
 from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import get_jwt_identity ##permite saber quién solicita acceso.
 from flask_jwt_extended import jwt_required
 
 ##Crear flask app:
@@ -32,8 +32,9 @@ def generate_token():
 
 def get_hello():
 
+    email = get_jwt_identity()
     dict = {
-        "message": "Welcome!"
+        "message": "Welcome!  " + email
     }
 
     return jsonify(dict), 200

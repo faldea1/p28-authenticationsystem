@@ -50,7 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const resp = await fetch('https://3001-4geeksacade-reactflaskh-j7dwm0jofz6.ws-us82.gitpod.io/api/token', options)
 					if (resp.status !== 200){
-						alert ('there has been some problem issues');
+						alert ('You have to create an account! Go to Postman');
 						return false;
 					} 
 					

@@ -6,15 +6,15 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light bg-light">
+		<nav className="navbar navbar-light" style={{paddingTop: 20 }}>
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+					<span style={{color: 'blue', fontSize: 25 }} className="navbar-brand mb-0 h1">Welcome</span>
 				</Link>
 				<div className="ml-auto">
 					{!store.token ?
 					<Link to="/login">
-						<button className="btn btn-primary">Welcome, Log in</button>
+						<button className="btn btn-primary">Log in</button>
 				</Link>
 					:
 					<button onClick={() => actions.logout()} className="btn btn-primary">Log out</button>
