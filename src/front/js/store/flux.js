@@ -68,9 +68,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			getMessage: async () => {
+				const store = getStore();
+				const options = {
+					headers: {
+						"Authorization": "Bearer " + store.token
+					}
+				};
 				try{
 					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
+					const resp = await fetch('https://3001-4geeksacade-reactflaskh-j7dwm0jofz6.ws-us82.gitpod.io/api/hello', options)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
